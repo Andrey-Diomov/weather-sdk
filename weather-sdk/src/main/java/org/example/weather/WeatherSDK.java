@@ -3,12 +3,12 @@ package org.example.weather;
 import java.util.Optional;
 
 public class WeatherSDK {
-  private static final long POLLING_INTERVAL_MS = 10 * 60 * 1000;
 
   private final String apiKey;
   private final WeatherClient client;
   private final WeatherCache cache;
   private final boolean pollingMode;
+  private final WeatherConfig config;
 
   public WeatherSDK(String apiKey, boolean pollingMode) {
 
@@ -18,7 +18,9 @@ public class WeatherSDK {
     this.apiKey = apiKey;
     this.pollingMode = pollingMode;
     this.client = new WeatherClient(apiKey);
-    this.cache = new WeatherCache(10);
+    this.config = new WeatherConfig();
+    this.cache = new WeatherCache(config.getCacheMaxSize());
+
 
     if (pollingMode) {
       startPolling();
@@ -50,7 +52,7 @@ public class WeatherSDK {
             WeatherData updated = client.fetchWeather(city);
             cache.put(city, updated);
           }
-          Thread.sleep(POLLING_INTERVAL_MS);
+          Thread.sleep(config.getPollingIntervalMs());
         } catch (InterruptedException e) {
           Thread.currentThread().interrupt();
           break;
