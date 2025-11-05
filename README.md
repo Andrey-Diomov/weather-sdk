@@ -90,7 +90,7 @@ dependencies {
 }
 ```
 
-> ⚠️ Security note: Never commit your token to a public repository. Always use environment variables or `gradle.properties`.
+> ⚠️ Security note: Never commit your token to a public repository. Always use environment variables.
 
 ---
 
