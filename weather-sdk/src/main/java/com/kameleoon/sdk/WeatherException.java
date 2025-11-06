@@ -1,4 +1,4 @@
-package org.example.weather;
+package com.kameleoon.sdk;
 
 public class WeatherException extends Exception {
   public WeatherException(String message) {

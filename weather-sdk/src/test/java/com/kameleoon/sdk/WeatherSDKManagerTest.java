@@ -1,4 +1,4 @@
-package org.example.weather;
+package com.kameleoon.sdk;
 
 import org.junit.jupiter.api.Test;
 

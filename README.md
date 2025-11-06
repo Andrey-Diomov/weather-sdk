@@ -46,7 +46,7 @@ repositories {
 }
 
 dependencies {
-    implementation 'com.example.weather:weather-sdk:1.0.0'
+    implementation 'com.kameleoon.sdk:weather-sdk:1.0.0'
 }
 ```
 

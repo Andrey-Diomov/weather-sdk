@@ -1,4 +1,4 @@
-package org.example.weather;
+package com.kameleoon.sdk;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
